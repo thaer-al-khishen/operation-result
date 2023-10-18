@@ -21,6 +21,7 @@ implementation 'com.relatablecode:operationresult:1.0.0-beta02'
 ```kotlin
 fun someFunctionThatCanFail(): Result<String> {
     // Logic that can throw exceptions
+    return Result.failure(Exception("Some error happened"))
 }
 ```
 

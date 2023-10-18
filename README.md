@@ -75,3 +75,6 @@ val result: Result<String> = Result.failure(TimeoutException())
 val operationResult = result.toCustomOperationResult(::customErrorHandler)
 println(operationResult.errorOrNull()?.message)
 ```
+
+## License:
+This project is licensed under the Apache 2.0 License. Check the LICENSE file for details.

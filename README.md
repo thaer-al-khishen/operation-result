@@ -48,7 +48,7 @@ operationResult.fold(
     ifError = { error -> 
         println("Error occurred: ${error.message}")
     },
-    ifValue = { value -> 
+    ifSuccess = { value -> 
         println("Success with value: $value")
     }
 )

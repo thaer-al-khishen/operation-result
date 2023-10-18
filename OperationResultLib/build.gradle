@@ -55,7 +55,7 @@ publishing {
         release(MavenPublication) {
             groupId 'com.relatablecode'
             artifactId 'operationresult'
-            version = '1.0.0-beta01'
+            version = '1.0.0-beta02'
 
             afterEvaluate {
                 from components.release

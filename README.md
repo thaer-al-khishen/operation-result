@@ -10,7 +10,9 @@ A flexible and comprehensive Kotlin library for encapsulating the results of ope
 
 ## Installation
 
-(Include any installation instructions here, like how to include the library via Gradle, Maven, etc.)
+```groovy
+implementation 'com.relatablecode:operationresult:1.0.0-beta02'
+```
 
 ## Usage
 

@@ -11,7 +11,7 @@ A flexible and comprehensive Kotlin library for encapsulating the results of ope
 ## Installation
 
 ```groovy
-implementation 'com.relatablecode:operationresult:1.0.0-beta02'
+implementation 'com.github.thaer-al-khishen:operation-result:1.0.0-beta02'
 ```
 
 ## Usage

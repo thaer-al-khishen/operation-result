@@ -55,11 +55,11 @@ fun main() {
 //    val customErrorResult = handleThrowable(someThrowable, ::customErrorHandler)
 //    println(customErrorResult.message)
 
-//    val result: Result<String> = Result.failure(TimeoutException())
-//    val operationResult = result.toCustomOperationResult(::customErrorHandler)
-//    println(operationResult.errorOrNull()?.message)
-
     val result: Result<String> = Result.failure(TimeoutException())
-    val operationResult = result.toOperationResult()
+    val operationResult = result.toCustomOperationResult(::customErrorHandler)
     println(operationResult.errorOrNull()?.message)
+
+//    val result: Result<String> = Result.failure(TimeoutException())
+//    val operationResult = result.toOperationResult()
+//    println(operationResult.errorOrNull()?.message)
 }

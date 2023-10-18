@@ -2,10 +2,9 @@ package com.example.operationresultapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import com.relatablecode.operationresult.OperationResult
 import com.relatablecode.operationresult.toOperationResult
-import java.lang.Exception
-import java.util.concurrent.TimeoutException
+import kotlin.Exception
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,10 +12,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Result.failure<Exception>(TimeoutException()).toOperationResult().onError {
-            findViewById<TextView>(R.id.tv_hello_world).text = it.message
+        val result: Result<String> = someFunctionThatCanFail()
+        val operationResult = result.toOperationResult()
+
+        when (operationResult) {
+            is OperationResult.Success -> {
+                println("Success with value: ${operationResult.value}")
+            }
+            is OperationResult.Error -> {
+                println("Error occurred: ${operationResult.error.message}")
+            }
         }
 
+    }
+
+    fun someFunctionThatCanFail(): Result<String> {
+        // Logic that can throw exceptions
+        return Result.failure(Exception("Some error happened"))
     }
 
 }

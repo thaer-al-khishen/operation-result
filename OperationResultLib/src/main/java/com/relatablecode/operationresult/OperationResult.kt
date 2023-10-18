@@ -20,10 +20,10 @@ sealed class OperationResult<out E: BaseError, out V> {
      * Utility function to conditionally apply transformations based on whether it's an Error or a Success.
      * Useful for branching logic without having to use when{} every time.
      */
-    fun <T> fold(ifError: (E) -> T, ifValue: (V) -> T): T {
+    fun <T> fold(ifError: (E) -> T, ifSuccess: (V) -> T): T {
         return when (this) {
             is Error -> ifError(error)
-            is Success -> ifValue(value)
+            is Success -> ifSuccess(value)
         }
     }
 

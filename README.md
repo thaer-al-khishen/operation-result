@@ -10,7 +10,9 @@ A flexible and comprehensive Kotlin library for encapsulating the results of ope
 
 ## Installation
 
-(Include any installation instructions here, like how to include the library via Gradle, Maven, etc.)
+```groovy
+implementation 'com.github.thaer-al-khishen:operation-result:1.0.0-beta02'
+```
 
 ## Usage
 
@@ -19,6 +21,7 @@ A flexible and comprehensive Kotlin library for encapsulating the results of ope
 ```kotlin
 fun someFunctionThatCanFail(): Result<String> {
     // Logic that can throw exceptions
+    return Result.failure(Exception("Some error happened"))
 }
 ```
 
@@ -45,7 +48,7 @@ operationResult.fold(
     ifError = { error -> 
         println("Error occurred: ${error.message}")
     },
-    ifValue = { value -> 
+    ifSuccess = { value -> 
         println("Success with value: $value")
     }
 )
@@ -72,3 +75,6 @@ val result: Result<String> = Result.failure(TimeoutException())
 val operationResult = result.toCustomOperationResult(::customErrorHandler)
 println(operationResult.errorOrNull()?.message)
 ```
+
+## License:
+This project is licensed under the Apache 2.0 License. Check the LICENSE file for details.

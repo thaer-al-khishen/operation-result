@@ -11,6 +11,16 @@ A flexible and comprehensive Kotlin library for encapsulating the results of ope
 
 ## Installation
 
+To use the OperationResult library in your project, add the following to your `settings.gradle` file
+```groovy
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+        // Other repositories
+    }
+}
+```
+Then, add the dependency to your module-level build.gradle file:
 ```groovy
 implementation 'com.github.thaer-al-khishen:operation-result:1.0.0-beta03'
 ```
